@@ -1,4 +1,4 @@
-/* home.css — landing page styles for Calculus Lock.
+/* home.css — landing page styles for Calculator Vault.
    Loaded AFTER style.css and only by index.html, so the legal pages are untouched. */
 
 :root {
@@ -203,3 +203,61 @@ section.wrap.band { padding-top: 64px; }
 @media (prefers-reduced-motion: reduce) {
   .badge-link, .card { transition: none; }
 }
+
+/* ---------- social proof ---------- */
+.proof {
+  margin: 22px 0 0;
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.proof strong { color: var(--text); font-weight: 600; }
+
+/* ---------- guide pages ---------- */
+.guide { max-width: 720px; }
+.guide h1 { font-size: clamp(28px, 4.4vw, 40px); letter-spacing: -0.8px; line-height: 1.15; margin: 0 0 16px; }
+.guide h2 { font-size: 24px; text-align: left; margin: 44px 0 14px; }
+.guide h3 { font-size: 18px; margin: 28px 0 8px; }
+.guide p { color: #ccd3df; }
+.guide ol, .guide ul { color: #ccd3df; padding-left: 22px; }
+.guide li { margin: 8px 0; }
+.guide .store-cta { margin: 36px 0; }
+.guide figure { margin: 32px 0; text-align: center; }
+.guide figure img { max-width: 260px; width: 100%; height: auto; border-radius: 20px; border: 1px solid var(--border); }
+.guide figcaption { color: var(--muted); font-size: 13.5px; margin-top: 10px; }
+
+.related {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.related h2 { font-size: 18px; text-align: left; margin: 0 0 12px; }
+.related ul { list-style: none; padding: 0; margin: 0; }
+.related li { margin: 8px 0; }
+
+a.feat { display: block; transition: transform .15s ease, border-color .15s ease; }
+a.feat:hover { transform: translateY(-3px); border-color: var(--brand); text-decoration: none; }
+a.feat h3 { color: var(--text); }
+
+/* guide-page FAQ accordions */
+.guide details {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 20px;
+  margin-bottom: 12px;
+}
+.guide summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 18px 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+.guide summary::-webkit-details-marker { display: none; }
+.guide summary::after { content: "+"; color: var(--brand); font-size: 22px; font-weight: 400; flex: none; }
+.guide details[open] summary::after { content: "−"; }
+.guide details p { margin: 0 0 20px; color: var(--muted); font-size: 15.5px; }
