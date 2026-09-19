@@ -173,3 +173,33 @@ footer {
   margin: 40px auto 0;
 }
 footer a { color: var(--muted); margin: 0 8px; }
+
+/* ---------- store CTA on legal pages ---------- */
+.store-cta {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  margin-top: 40px;
+  text-align: center;
+}
+.store-cta p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+}
+.store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+}
+.store-badges a {
+  display: inline-block;
+  line-height: 0;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.store-badges a:hover { transform: translateY(-2px); opacity: .9; }
+.store-badges img { height: 48px; width: auto; display: block; }

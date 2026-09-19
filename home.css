@@ -1,0 +1,205 @@
+/* home.css — landing page styles for Calculus Lock.
+   Loaded AFTER style.css and only by index.html, so the legal pages are untouched. */
+
+:root {
+  --brand: #f59e0b;          /* matches the app's orange accent */
+  --brand-soft: rgba(245, 158, 11, 0.12);
+}
+
+.wrap { max-width: 1040px; }
+.topbar { max-width: 1040px; }
+footer { max-width: 1040px; }
+
+h2 {
+  font-size: 30px;
+  letter-spacing: -0.4px;
+  margin: 0 0 28px;
+  text-align: center;
+}
+
+.band {
+  border-top: 1px solid var(--border);
+  padding-top: 64px;
+}
+
+.lede { color: var(--muted); font-size: 18px; }
+.lede.center { max-width: 620px; margin: 0 auto; text-align: center; }
+.small { font-size: 14px; color: var(--muted); }
+.center { text-align: center; }
+
+/* ---------- hero ---------- */
+.hero-v2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 72px;
+}
+@media (min-width: 860px) {
+  .hero-v2 { grid-template-columns: 1.05fr 0.95fr; gap: 56px; padding-top: 56px; }
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brand);
+  margin: 0 0 14px;
+}
+
+.hero-v2 h1 {
+  font-size: clamp(32px, 5.2vw, 50px);
+  line-height: 1.12;
+  letter-spacing: -1.2px;
+  margin: 0 0 18px;
+}
+
+.hero-v2 .lede { margin: 0 0 30px; max-width: 520px; }
+
+.hero-shot { display: flex; justify-content: center; }
+.hero-shot img,
+.shots img {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+/* ---------- store badges ---------- */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+.badges.center { justify-content: center; }
+
+.badge-link {
+  display: inline-block;
+  line-height: 0;
+  border-radius: 10px;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.badge-link:hover { transform: translateY(-2px); opacity: .9; text-decoration: none; }
+.badge-link:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
+.badge-link img { height: 52px; width: auto; display: block; }
+
+.trust {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  padding: 0;
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.trust li::before { content: "✓ "; color: var(--brand); font-weight: 700; }
+
+/* ---------- steps ---------- */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+
+.steps li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+.step-n {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 15px;
+}
+.steps h3 { margin: 16px 0 8px; font-size: 18px; }
+.steps p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* ---------- features ---------- */
+.feat-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 620px) { .feat-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 940px) { .feat-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.feat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.feat h3 { margin: 0 0 8px; font-size: 16px; }
+.feat p { margin: 0; color: var(--muted); font-size: 14.5px; }
+
+/* ---------- screenshots ---------- */
+.shots {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 860px) { .shots { grid-template-columns: repeat(4, 1fr); } }
+.shots img { max-width: none; }
+
+/* ---------- faq ---------- */
+#faq details {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 20px;
+  margin-bottom: 12px;
+}
+#faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16.5px;
+  padding: 18px 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+#faq summary::-webkit-details-marker { display: none; }
+#faq summary::after {
+  content: "+";
+  color: var(--brand);
+  font-size: 22px;
+  font-weight: 400;
+  flex: none;
+}
+#faq details[open] summary::after { content: "−"; }
+#faq details p { margin: 0 0 20px; color: var(--muted); font-size: 15.5px; }
+
+/* ---------- final cta ---------- */
+.cta {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 64px;
+}
+.cta-icon { border-radius: 22px; margin-bottom: 18px; }
+.cta h2 { margin-bottom: 14px; }
+.cta .badges { margin: 30px 0 18px; }
+
+section.wrap { padding-bottom: 72px; padding-top: 0; }
+section.wrap.band { padding-top: 64px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-link, .card { transition: none; }
+}
